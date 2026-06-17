@@ -3,6 +3,8 @@
 
 > Registered Charity No. 1215373 · Southampton, UK
 
+🌐 **Live Demo · 線上預覽：** [https://ambrosecheng-bot.github.io/chlcentre/](https://ambrosecheng-bot.github.io/chlcentre/)
+
 ---
 
 ## Table of Contents · 目錄
@@ -153,6 +155,9 @@ git push origin main
 # Settings → Pages → Source: Deploy from branch → main → / (root)
 # Your page will be live at: https://yourusername.github.io/repo-name/chlcentre-landing.html
 ```
+
+> ✅ **This project is live on GitHub Pages:**
+> [https://ambrosecheng-bot.github.io/chlcentre/](https://ambrosecheng-bot.github.io/chlcentre/)
 
 ### Netlify
 ```bash
