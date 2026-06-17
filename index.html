@@ -621,118 +621,91 @@ p.lead {
    REFERRAL SECTION
 ═══════════════════════════════════════ */
 .referral-section {
-  background: var(--cream);
+  background: #0D1B3E;
   padding: 56px var(--side);
   text-align: center;
-  border-top: 2px dashed rgba(13,27,62,0.12);
 }
-.referral-section h2 {
-  color: var(--navy);
-  margin-bottom: 10px;
-}
+.referral-section .section-label { color: rgba(255,255,255,0.55); }
+.referral-section h2 { color: #ffffff; margin-bottom: 12px; }
 .referral-lead {
   font-size: 0.97rem;
-  color: var(--muted);
-  max-width: 480px;
+  color: rgba(255,255,255,0.78);
+  max-width: 500px;
   margin: 0 auto 32px;
-  line-height: 1.75;
+  line-height: 1.8;
 }
-.referral-lead strong { color: var(--navy); }
+.referral-lead strong { color: #F4A800; }
 
-.share-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  max-width: 480px;
-  margin: 0 auto 20px;
-}
-.share-btn {
+.share-row {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: var(--tap);
-  padding: 0 16px;
-  border-radius: var(--r);
-  font-size: 0.97rem;
-  font-weight: 800;
-  font-family: inherit;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: transform .15s, box-shadow .15s;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 420px;
+  margin: 0 auto 24px;
+}
+.sbtn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  width: 100% !important;
+  min-height: 56px !important;
+  padding: 14px 20px !important;
+  border-radius: 14px !important;
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  font-family: 'Noto Sans TC','Inter',sans-serif !important;
+  text-decoration: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  color: #ffffff !important;
   -webkit-tap-highlight-color: transparent;
-  color: var(--white);
+  transition: opacity .15s, transform .15s;
+  box-sizing: border-box !important;
 }
-.share-btn:active { transform: scale(.96); }
-.share-btn svg {
-  width: 22px; height: 22px;
-  flex-shrink: 0;
-  fill: currentColor;
-}
+.sbtn:active { transform: scale(.97); opacity:.88; }
+.sbtn svg { width:24px; height:24px; fill:#ffffff; flex-shrink:0; }
+.sbtn-wa   { background: #25D366 !important; box-shadow: 0 5px 18px rgba(37,211,102,.4); }
+.sbtn-sig  { background: #3A76F0 !important; box-shadow: 0 5px 18px rgba(58,118,240,.4); }
+.sbtn-fb   { background: #1877F2 !important; box-shadow: 0 5px 18px rgba(24,119,242,.4); }
+.sbtn-copy { background: #F4A800 !important; color: #0D1B3E !important; box-shadow: 0 5px 18px rgba(244,168,0,.4); }
+.sbtn-copy svg { fill: #0D1B3E; }
 
-.share-btn.whatsapp {
-  background: #25D366;
-  box-shadow: 0 4px 16px rgba(37,211,102,.35);
-}
-.share-btn.signal {
-  background: #3A76F0;
-  box-shadow: 0 4px 16px rgba(58,118,240,.35);
-}
-.share-btn.facebook {
-  background: #1877F2;
-  box-shadow: 0 4px 16px rgba(24,119,242,.35);
-}
-.share-btn.copylink {
-  background: var(--navy);
-  box-shadow: 0 4px 16px rgba(13,27,62,.28);
-}
-.share-btn.whatsapp:hover { background: #1ebe57; }
-.share-btn.signal:hover   { background: #2a63d8; }
-.share-btn.facebook:hover { background: #1464d8; }
-.share-btn.copylink:hover { background: #162d5e; }
-
-/* Toast notification */
 .toast {
   position: fixed;
   bottom: 90px;
   left: 50%;
   transform: translateX(-50%) translateY(20px);
-  background: var(--navy);
-  color: var(--white);
-  padding: 12px 24px;
+  background: #25D366;
+  color: #ffffff;
+  padding: 12px 28px;
   border-radius: 999px;
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 0.92rem;
+  font-weight: 800;
   opacity: 0;
   pointer-events: none;
   transition: opacity .3s, transform .3s;
   white-space: nowrap;
   z-index: 9999;
-  box-shadow: 0 6px 24px rgba(0,0,0,.25);
+  box-shadow: 0 6px 24px rgba(0,0,0,.3);
 }
-.toast.show {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
 .referral-note {
   font-size: 0.78rem;
-  color: var(--muted);
-  margin-top: 10px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 8px;
+  word-break: break-all;
 }
 
-@media (min-width: 480px) {
-  .share-grid {
-    grid-template-columns: repeat(4, 1fr);
+@media (min-width: 640px) {
+  .share-row {
+    flex-direction: row;
+    flex-wrap: wrap;
     max-width: 640px;
+    justify-content: center;
   }
-  .share-btn { flex-direction: column; gap: 6px; font-size: 0.82rem; padding: 14px 8px; }
-  .share-btn svg { width: 26px; height: 26px; }
-}
-
-@media (min-width: 1024px) {
-  .share-btn { flex-direction: row; gap: 10px; font-size: 0.95rem; padding: 0 20px; }
+  .sbtn { width: auto !important; flex: 1 1 140px; max-width: 200px; }
 }
 
 /* ═══════════════════════════════════════
@@ -1159,53 +1132,52 @@ footer {
 <!-- REFERRAL SECTION -->
 <section class="referral-section">
   <div class="container">
-    <span class="section-label">介紹給朋友</span>
-    <h2>你介紹，<span class="gold">朋友受惠，孩子得益</span></h2>
+    <span class="section-label">📣 介紹給朋友</span>
+    <h2>你介紹，<span style="color:#F4A800">朋友受惠，孩子得益</span></h2>
     <p class="referral-lead">
       你身邊是否還有港人家長，擔心孩子忘記廣東話？<br>
       <strong>一個分享，可能改變一個孩子的文化根基。</strong><br>
-      名額有限，請今天就告訴他們。
+      名額有限 — 請今天就告訴他們。
     </p>
 
-    <div class="share-grid">
+    <div class="share-row">
+
       <!-- WhatsApp -->
-      <a class="share-btn whatsapp" id="btn-whatsapp" href="#" onclick="shareWhatsApp(event)">
+      <a class="sbtn sbtn-wa" href="#" onclick="shareWhatsApp(event)">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
         </svg>
-        WhatsApp
+        WhatsApp 分享
       </a>
 
       <!-- Signal -->
-      <a class="share-btn signal" id="btn-signal" href="#" onclick="shareSignal(event)">
+      <a class="sbtn sbtn-sig" href="#" onclick="shareSignal(event)">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm.694 18.695a6.573 6.573 0 01-3.241-.853l-3.603.944.964-3.521A6.558 6.558 0 015.44 12c0-3.621 2.939-6.56 6.56-6.56 3.621 0 6.56 2.939 6.56 6.56 0 3.621-2.939 6.56-6.56 6.56l-.306-.865z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.559 16.907l-.463.652a.975.975 0 01-1.233.28 11.574 11.574 0 01-1.832-1.229 11.404 11.404 0 01-1.538-1.538 11.574 11.574 0 01-1.229-1.832.975.975 0 01.28-1.233l.652-.463a.408.408 0 00.108-.527l-1.018-1.763a.41.41 0 00-.507-.18 3.595 3.595 0 00-2.22 3.84c.44 3.07 3.724 6.354 6.793 6.794a3.595 3.595 0 003.84-2.22.41.41 0 00-.18-.507l-1.763-1.018a.408.408 0 00-.53.145z"/>
         </svg>
-        Signal
+        Signal 分享
       </a>
 
       <!-- Facebook -->
-      <a class="share-btn facebook" id="btn-facebook"
-         href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fambrosecheng-bot.github.io%2Fchlcentre%2F&quote=%F0%9F%87%AD%F0%9F%87%B0%20%E6%B8%AF%E8%AA%9E%E5%82%B3%E6%89%BF%E4%B8%AD%E5%BF%83%202026-2027%20%E6%8B%9B%E7%94%9F%E7%8F%BE%E6%AD%A3%E9%96%8B%E5%A7%8B%EF%BC%81%E6%AF%8F%E7%8F%AD%E5%8F%AA%E9%99%9520%E4%BA%BA%EF%BC%8C%E9%A1%8D%E6%BB%BF%E5%8D%B3%E6%AD%A2%E3%80%82%E6%AD%A1%E8%BF%8EYr1-Yr9%E5%90%8C%E5%AD%B8%E5%A0%B1%E5%90%8D%EF%BC%81"
-         target="_blank" rel="noopener">
+      <a class="sbtn sbtn-fb"
+         href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fambrosecheng-bot.github.io%2Fchlcentre%2F"
+         target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
         </svg>
-        Facebook
+        Facebook 分享
       </a>
 
       <!-- Copy Link -->
-      <button class="share-btn copylink" id="btn-copy" onclick="copyLink()">
+      <button class="sbtn sbtn-copy" onclick="copyLink()">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M13.723 18.654l-3.61 3.609c-2.316 2.315-6.063 2.315-8.378 0-2.315-2.316-2.315-6.063 0-8.379l3.61-3.608c.14-.14.293-.261.451-.368l-.01.091c-.08.88-.01 1.755.196 2.599l-1.615 1.616c-1.343 1.344-1.343 3.524 0 4.867 1.344 1.344 3.524 1.344 4.867 0l3.61-3.61c1.344-1.342 1.344-3.523 0-4.866-.403-.403-.88-.686-1.387-.851l.828-.828C13.03 9.578 14.4 10.106 15.4 11.106c1.98 1.98 1.98 5.19 0 7.17l.323-.622zm-3.446-5.323c-1.001-1-2.37-1.528-3.771-1.528l-.828.828c.507.165.984.448 1.387.851 1.344 1.343 1.344 3.524 0 4.866l-3.61 3.61c-1.343 1.344-3.524 1.344-4.867 0-1.343-1.343-1.343-3.523 0-4.867l1.616-1.616c-.207-.844-.277-1.72-.197-2.6l.01-.09-.451.367-3.61 3.609c-2.315 2.315-2.315 6.062 0 8.378 2.316 2.315 6.062 2.315 8.378 0l3.61-3.609c1.981-1.98 1.981-5.19 0-7.17-.403-.403-.88-.687-1.387-.851l.828-.828c1.402 0 2.77.528 3.772 1.528z"/>
+          <path d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" stroke="#0D1B3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
         </svg>
         複製連結
       </button>
-    </div>
 
-    <p class="referral-note">
-      分享此頁面 → <strong>https://ambrosecheng-bot.github.io/chlcentre/</strong>
-    </p>
+    </div>
+    <p class="referral-note">🔗 https://ambrosecheng-bot.github.io/chlcentre/</p>
   </div>
 </section>
 
