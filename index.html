@@ -311,55 +311,6 @@ p.lead {
 .problem-card .icon { font-size: 1.7rem; flex-shrink: 0; line-height: 1; }
 .problem-card p { font-size: 0.93rem; color: rgba(255,255,255,.82); }
 
-/* ═══════════════════════════════════════
-   VALUE STACK  — cards on mobile, table on desktop
-═══════════════════════════════════════ */
-.value-stack-section { background: var(--white); }
-
-/* Mobile: card list */
-.stack-cards { margin-top: 24px; }
-.stack-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 12px;
-  background: #f8f7ff;
-  border: 1px solid #e4e4f0;
-  border-radius: var(--r);
-  padding: 16px;
-  margin-bottom: 10px;
-  font-size: 0.92rem;
-}
-.stack-card-label { flex: 1; font-weight: 600; color: var(--ink); }
-.stack-card-price { font-weight: 800; color: var(--red); white-space: nowrap; font-size: 0.88rem; }
-
-/* Desktop: proper table (hidden on mobile) */
-.stack-table-wrap { display: none; }
-
-.stack-total {
-  background: var(--navy);
-  color: var(--white);
-  padding: 16px 18px;
-  border-radius: 0 0 var(--r) var(--r);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 800;
-  font-size: 1rem;
-  margin-top: -2px;
-}
-.stack-total .price-big { font-size: 1.5rem; color: var(--gold); }
-
-.charity-note {
-  margin-top: 14px;
-  background: #e6f9ee;
-  border-left: 4px solid var(--green);
-  padding: 14px 16px;
-  border-radius: 0 var(--r) var(--r) 0;
-  font-size: 0.88rem;
-  color: #1a4a2e;
-  line-height: 1.6;
-}
 
 /* ═══════════════════════════════════════
    FEATURES
@@ -811,24 +762,6 @@ footer {
   h2 { font-size: 2.6rem; }
   section { padding: 80px var(--side); }
 
-  /* Switch value stack to table on desktop */
-  .stack-cards      { display: none; }
-  .stack-table-wrap { display: block; }
-
-  .stack-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.95rem;
-  }
-  .stack-table thead tr { background: var(--navy); color: var(--white); }
-  .stack-table th { padding: 14px 18px; text-align: left; font-weight: 700; }
-  .stack-table tbody tr:nth-child(odd) { background: #f7f5ff; }
-  .stack-table td {
-    padding: 14px 18px;
-    vertical-align: middle;
-    border-bottom: 1px solid #e8e8f0;
-  }
-  .stack-table td:last-child { font-weight: 800; color: var(--red); white-space: nowrap; }
 
   .features-grid { grid-template-columns: repeat(3, 1fr); }
   .proof-grid    { grid-template-columns: repeat(3, 1fr); }
@@ -898,7 +831,7 @@ footer {
 
 <!-- URGENCY BANNER -->
 <div class="urgency">
-  ⚡ 每班最多 <span>20人</span>，先到先得 — 去年班別已全部額滿！
+  ⚡ 每班最多 <span>20人</span>，先到先得！
 </div>
 
 <!-- PROBLEM -->
@@ -924,58 +857,25 @@ footer {
         <div class="icon">⏳</div>
         <p>「我想教，但一個人教不來，孩子沒有同學一起學，缺乏動力。」</p>
       </div>
+      <div class="problem-card">
+        <div class="icon">👴</div>
+        <p>「孩子和長輩愈來愈難溝通，隔代的情感連繫正在悄悄消失……」</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">🪞</div>
+        <p>「在英國長大的香港孩子，容易出現『我是誰？』的身份迷失。」</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">✍️</div>
+        <p>「識聽識講或許還可以，但認讀識寫，對孩子來說卻是另一個挑戰。」</p>
+      </div>
     </div>
+    <p class="lead" style="margin-top:24px; color:rgba(255,255,255,.75)">
+      透過有趣生動的學習活動，讓孩子建立對中文的感情和信心。
+    </p>
   </div>
 </section>
 
-<!-- VALUE STACK -->
-<section class="value-stack-section" id="value">
-  <div class="container">
-    <span class="section-label">價值堆疊</span>
-    <h2>報名後，你的孩子<span class="gold">究竟得到什麼？</span></h2>
-    <p class="lead">每一項，如果單獨購買，市場價格如下。我們把它全部打包，成為你孩子的語言與文化護照。</p>
-
-    <!-- Mobile: cards -->
-    <div class="stack-cards">
-      <div class="stack-card"><span class="stack-card-label">✅ 廣東話聽說系統訓練（每週2小時）</span><span class="stack-card-price">£25–40/h</span></div>
-      <div class="stack-card"><span class="stack-card-label">✅ 繁體字讀寫系統教學</span><span class="stack-card-price">£20–35/h</span></div>
-      <div class="stack-card"><span class="stack-card-label">✅ 香港文化與價值觀傳承</span><span class="stack-card-price">無價</span></div>
-      <div class="stack-card"><span class="stack-card-label">✅ 兒童繪本及圖書為教材</span><span class="stack-card-price">£15+/課</span></div>
-      <div class="stack-card"><span class="stack-card-label">✅ 遊戲活動融入課堂</span><span class="stack-card-price">£10/課</span></div>
-      <div class="stack-card"><span class="stack-card-label">✅ 自編課程配合Yr1–Yr9需要</span><span class="stack-card-price">£30+/課</span></div>
-      <div class="stack-card"><span class="stack-card-label">✅ 小班教學最多20人</span><span class="stack-card-price">£25/人</span></div>
-      <div class="stack-card"><span class="stack-card-label">✅ 香港人社群連結</span><span class="stack-card-price">無價</span></div>
-      <div class="stack-card"><span class="stack-card-label">✅ 每週六上課，方便在職父母</span><span class="stack-card-price">靈活價值</span></div>
-    </div>
-
-    <!-- Desktop: table -->
-    <div class="stack-table-wrap">
-      <table class="stack-table">
-        <thead><tr><th>你得到的</th><th>市場單獨估值</th></tr></thead>
-        <tbody>
-          <tr><td>✅ 每週2小時廣東話聽說訓練（專業課程）</td><td>£25–40/小時</td></tr>
-          <tr><td>✅ 繁體字讀寫系統化教學</td><td>£20–35/小時</td></tr>
-          <tr><td>✅ 香港文化價值觀傳承課程</td><td>無價（市場幾乎買不到）</td></tr>
-          <tr><td>✅ 兒童繪本及圖書為教材（歡樂輕鬆學習）</td><td>£15+/課節</td></tr>
-          <tr><td>✅ 趣味活動與遊戲融入課堂</td><td>£10/課節增值</td></tr>
-          <tr><td>✅ 自編課程配合Yr1–Yr9不同年齡需要</td><td>£30+/課節</td></tr>
-          <tr><td>✅ 小班教學最多20人（每位學生獲充分關注）</td><td>£25/人/課節</td></tr>
-          <tr><td>✅ 香港人社群連結</td><td>無法金錢衡量</td></tr>
-          <tr><td>✅ 每週六上課，方便在職父母</td><td>靈活性估值 £15+</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="stack-total">
-      <span>以上全部，總估值</span>
-      <span class="price-big">£3,000+ /年</span>
-    </div>
-    <div class="charity-note">
-      🎁 <strong>作為英國慈善機構，我們以可負擔的學費提供以上一切。</strong><br>
-      孩子得到的，遠超你所付出的。這不只是投資語言 — 是投資你孩子的身份認同與文化根基。
-    </div>
-  </div>
-</section>
 
 <!-- FEATURES -->
 <section>
