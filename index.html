@@ -957,70 +957,6 @@ footer {
   </div>
 </section>
 
-<!-- SCARCITY + COUNTDOWN -->
-<section class="scarcity-section">
-  <div class="container">
-    <span class="section-label">開學倒數</span>
-    <h2>距離開學，還有……</h2>
-    <div class="countdown-row" id="countdown">
-      <div class="cd-block"><div class="cd-num" id="cd-days">--</div><div class="cd-label">天</div></div>
-      <div class="cd-block"><div class="cd-num" id="cd-hours">--</div><div class="cd-label">小時</div></div>
-      <div class="cd-block"><div class="cd-num" id="cd-mins">--</div><div class="cd-label">分鐘</div></div>
-      <div class="cd-block"><div class="cd-num" id="cd-secs">--</div><div class="cd-label">秒</div></div>
-    </div>
-
-    <span class="section-label" style="margin-top:12px">名額視覺化 — 每班20個</span>
-    <div class="seats-visual" id="seats"></div>
-    <p class="scarcity-note">🔴 深色格 = 已有查詢 · 淺色格 = 仍可報名<br>先報名先獲確認名額</p>
-
-    <a href="https://docs.google.com/forms/d/1O3ZqeRRVGaB5jAOiTxo9nT1DIE6T-Qw4FNUFOt40au0/viewform" target="_blank" rel="noopener noreferrer" class="btn-primary" style="max-width:340px; margin:0 auto; width:100%;">
-      📝 現在確保名額
-    </a>
-  </div>
-</section>
-
-<!-- SOCIAL PROOF -->
-<section class="proof">
-  <div class="container">
-    <span class="section-label">家長心聲</span>
-    <h2 style="color:#fff">他們的孩子，<span style="color:var(--gold)">改變了</span></h2>
-    <div class="proof-grid">
-      <div class="quote-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>「孩子以前一句廣東話都不肯說，現在會主動跟我講，甚至教我寫繁體字！老師們非常用心。」</blockquote>
-        <div class="quote-author">— 陳太，孩子就讀Yr3，Southampton</div>
-      </div>
-      <div class="quote-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>「作為BNO移民，最怕孩子忘記自己是香港人。這裡不只教語言，更教文化，我和先生都非常感激。」</blockquote>
-        <div class="quote-author">— 黃Sir一家，孩子就讀Yr5，Hampshire</div>
-      </div>
-      <div class="quote-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>「小班教學真的很有效。老師記得每個孩子的進度，女兒上了一學期，繁體字已能寫基本詞語！」</blockquote>
-        <div class="quote-author">— 李媽媽，孩子就讀Yr6，Southampton</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GUARANTEE -->
-<section class="guarantee-section">
-  <div class="container">
-    <span class="section-label" style="text-align:center; display:block">我們的承諾</span>
-    <h2 style="text-align:center">報名，完全放心</h2>
-    <div class="guarantee-box">
-      <div class="shield">🛡️</div>
-      <h3>「試上」承諾</h3>
-      <p>
-        我們邀請你的孩子在 <strong>9月12日正式上課第一天</strong>，親身感受課堂氣氛。<br><br>
-        如果上完第一堂後，孩子完全不喜歡，請聯絡我們。我們會尊重你的決定，不會施加任何壓力。<br><br>
-        我們這樣說，是因為我們對課程有 <strong>充分信心</strong> — 孩子和家長，通常都愛上了。
-      </p>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section class="faq-section">
   <div class="container">
@@ -1049,7 +985,7 @@ footer {
         <button class="faq-q" onclick="toggleFaq(this)">
           孩子已有一定廣東話基礎，課程夠深度嗎？<span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">有！Yr1至Yr9各有適合的課程深度，確保每位學生都在最適合自己的程度學習，不會覺得太淺或太深。</div>
+        <div class="faq-a">我們不是補習班，也不是考試培訓——我們是興趣班。課程以小組活動、遊戲和故事為主，目標是讓孩子愛上廣東話、對香港文化產生感情。長遠來說，一個真心喜歡說廣東話的孩子，比背識多少個生字更重要。有基礎的孩子，在這裡會學得更投入、更快樂。</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
@@ -1152,33 +1088,6 @@ footer {
 </div>
 
 <script>
-// ── COUNTDOWN to Sep 12 2026 ──
-function updateCountdown() {
-  const target = new Date('2026-09-12T10:00:00+01:00').getTime();
-  const diff = target - Date.now();
-  if (diff <= 0) {
-    document.getElementById('countdown').innerHTML =
-      '<p style="color:var(--gold);font-size:1.1rem;font-weight:800">🎉 正式上課了！</p>';
-    return;
-  }
-  const pad = n => String(n).padStart(2,'0');
-  document.getElementById('cd-days').textContent  = pad(Math.floor(diff / 86400000));
-  document.getElementById('cd-hours').textContent = pad(Math.floor((diff % 86400000) / 3600000));
-  document.getElementById('cd-mins').textContent  = pad(Math.floor((diff % 3600000) / 60000));
-  document.getElementById('cd-secs').textContent  = pad(Math.floor((diff % 60000) / 1000));
-}
-setInterval(updateCountdown, 1000);
-updateCountdown();
-
-// ── SEATS VISUAL ──
-const seatsEl = document.getElementById('seats');
-for (let i = 0; i < 20; i++) {
-  const s = document.createElement('div');
-  s.className = 'seat ' + (i < 13 ? 'taken' : 'open');
-  s.textContent = i < 13 ? '🔴' : '⬜';
-  seatsEl.appendChild(s);
-}
-
 // ── STICKY BAR (mobile only via CSS, but JS still runs for toggle) ──
 const sticky = document.getElementById('stickyBar');
 const showAt = 300;
